@@ -34,9 +34,9 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
             <Link href="/">
               <>
                 <Image
-                  //   width={62}
-                  //   height={62}
-                  //   src={post.postedBy.image}
+                  // width={62}
+                  // height={62}
+                  // src={post.postedBy.image}
                   className="rounded-full"
                   src={Photo}
                   alt="profile-photo"
