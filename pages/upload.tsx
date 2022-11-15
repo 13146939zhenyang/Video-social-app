@@ -15,6 +15,9 @@ const upload = () => {
     SanityAssetDocument | undefined
   >();
   const [wrongFileType, setWrongFileType] = useState(false);
+  const [caption, setCaption] = useState("");
+  const [category, setCategory] = useState(topics[0].name);
+  const [savingPost, setSavingPost] = useState(false);
   const uploadVideo = async (e: any) => {
     const selectedFile = e.target.files[0];
     const fileTypes = ["video/mp4", "video/avi", "video/mov", "video/wmv"];
@@ -36,7 +39,8 @@ const upload = () => {
   };
   return (
     <div className="flex w-full h-full  left-0 top-[60px] mb-10 pt-10 lg:pt-20 bg-[#F8F8F8] justify-center">
-      <div className="bg-white rounded-lg xl:h-[80vh] flex gap-6 flex-wrap justify-center items-center p-14 pt-6">
+      {/* <div className="bg-white rounded-lg xl:h-[80vh] flex gap-6 flex-wrap justify-center items-center p-14 pt-6"> */}
+      <div className="bg-white rounded-lg flex gap-6 flex-wrap justify-center items-center p-14 pt-6">
         <div>
           <div>
             <p className="text-2xl font-bold">Upload Video</p>
@@ -107,10 +111,8 @@ const upload = () => {
           />
           <label className="text-md font-medium">Choose a Category</label>
           <select
-            name=""
-            id=""
             onChange={() => {}}
-            className="outline-none border-2 border-gray-200 text-md capitalize lg:p-4 p-2 rounded cursor-pointer"
+            className="outline-none lg:w-650 border-2 border-gray-200 text-md capitalize lg:p-4 p-2 rounded cursor-pointer"
           >
             {topics.map((topic) => (
               <option
@@ -126,14 +128,14 @@ const upload = () => {
             <button
               onClick={() => {}}
               type="button"
-              className="border-gray-300 border-2 text-md font-medium w-28 lg:w-44 outline-none"
+              className="border-gray-300 border-2 text-md font-medium p-2 rounded w-28 lg:w-44 outline-none"
             >
               Discard
             </button>
             <button
               onClick={() => {}}
               type="button"
-              className="bg-[#F51997] text-white border-2 text-md font-medium w-28 lg:w-44 outline-none"
+              className="bg-[#F51997] text-white text-md font-medium p-2 rounded w-28 lg:w-44 outline-none"
             >
               Post
             </button>
