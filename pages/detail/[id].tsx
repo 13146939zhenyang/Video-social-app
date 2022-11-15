@@ -81,6 +81,39 @@ const Detail = ({ postDetails }: IProps) => {
           )}
         </div>
       </div>
+      <div className="relative w-[1000px] md:w-[900px] lg:w-[700px]">
+        <div className="lg:mt-20 mt-10">
+          <div className="flex gap-3 p-2 curosr-pointer font-semibold rounded">
+            <div className="md:w-16 md:h-16 w-10 h-10">
+              <Link href="/">
+                <>
+                  <Image
+                    width={62}
+                    height={62}
+                    src={post.postedBy.image}
+                    className="rounded-full"
+                    // src={Photo}
+                    alt="profile-photo"
+                  />
+                </>
+              </Link>
+            </div>
+            <div>
+              <Link href="/">
+                <div className="flex item-center gap-2">
+                  <p className="flex item-center gap-2 md:text-md font-bold text-primary">
+                    {post.postedBy.userName}
+                    <GoVerified className="text-blue-400 text-md" />
+                  </p>
+                  <p className="capitalize font-medium text-xs text-gray-500 hidden md:block">
+                    {post.postedBy.userName}
+                  </p>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
